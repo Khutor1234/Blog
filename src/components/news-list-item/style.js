@@ -12,12 +12,20 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         width: 150,
         height: 150,
-        marginRight: 20
+        marginRight: 20,
+        cursor: 'pointer'
     },
     header: {
         fontSize: '30px',
         lineHeight: '30px',
         marginBottom: 10
+    },
+    subheader: {
+        color: '#e91e63'
+    },
+    item: {
+        marginBottom: 30,
+        borderBottom: '2px solid #e91e63'
     }
 }));
 

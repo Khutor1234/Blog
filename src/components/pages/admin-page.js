@@ -1,13 +1,13 @@
 import React from 'react';
 import NewsList from '../news-list';
 import { withRouter } from 'react-router-dom';
-import {Button} from '@material-ui/core';
+import AdminActions from '../admin-actions';
 
-const AdminPage = ({ modalOpen }) => {
+const AdminPage = () => {
   return (
     <React.Fragment>
+        <AdminActions/>
         <NewsList admin/>
-        <Button color="secondary" variant="contained" onClick={() => modalOpen()}>Add news</Button>
     </React.Fragment>
   );
 };

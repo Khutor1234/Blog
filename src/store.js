@@ -3,7 +3,7 @@ import reducer from "./reducers";
 
 const store = createStore(reducer);
 
-// localStorage.clear()
+//localStorage.clear()
 
 store.subscribe(() => {
     localStorage['news-store'] = JSON.stringify(store.getState())

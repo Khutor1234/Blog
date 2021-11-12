@@ -14,7 +14,6 @@ const App = () => {
         <Route path="/:id"
                 render={({ match }) => {
                   const { id } = match.params;
-                  console.log(id)
                   return <NewsDetails itemId={id} />
                 }}/>
       </Switch>

@@ -1,18 +1,25 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     name: {
-        fontSize: '15px'
+        fontSize: '16px',
+        textTransform: 'uppercase'
     },
     body: {
-        fontSize: '10px'
+        fontSize: '12px'
     },
-    avatar: {
-        width: 60,
-        height: 60,
+    img: {
+        width: 80,
+        height: 80,
         marginRight: 20
     },
+    email:{
+        fontSize: '12px',
+        color: '#e91e63',
+        marginTop: 10,
+        textTransform: 'uppercase'
+    }
 }));
 
 export default useStyles;

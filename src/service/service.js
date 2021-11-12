@@ -22,15 +22,14 @@ export default class Service {
       return res
     };
 
-    getUsers = async (id) => {
-      const res = await this.getResource(`/users/${id}`);
+    getUsers = async () => {
+      const res = await this.getResource(`/users/`);
       return res
     };
 
-
     getComments = async () => {
-        const res = await this.getResource(`/comments/ `);
+        const res = await this.getResource(`/comments/`);
         return res
       };
-  
+
 }

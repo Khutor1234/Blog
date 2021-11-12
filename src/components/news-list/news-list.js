@@ -7,8 +7,24 @@ import { withService, compose } from '../hoc';
 import Spinner from '../spinner';
 import ErrorIndicator from '../error-indicator';
 
+const NewsList = ({news, admin}) => {
 
-const NewsList = ({news, loading, error, fetchNews, admin}) => {
+  return(
+    <Container>
+      <List style={{marginTop: '60px'}}>
+        {
+          news.map((item) => {
+            return (
+                <NewsListItem key={item.id} news={item} admin = {admin}/>
+            );
+          })
+        }
+      </List>
+    </Container>
+  )
+}
+
+const NewsListContainer= ({news, loading, error, fetchNews, admin, filteredNews}) => {
 
   useEffect(() => {
       fetchNews()
@@ -23,29 +39,24 @@ const NewsList = ({news, loading, error, fetchNews, admin}) => {
   }
 
   if(error){
-      return <ErrorIndicator/>
+    return <ErrorIndicator/>
+  }
+
+  if(filteredNews){
+    return <NewsList admin={admin} news={filteredNews}/>
   }
 
   return (
-    <Container>
-      <List style={{marginTop: '60px'}}>
-        {
-          news.map((item) => {
-            return (
-                <NewsListItem key={item.id} news={item} admin = {admin}/>
-            );
-          })
-        }
-      </List>
-    </Container>
+    <NewsList admin={admin} news={news}/>
   );
 };
 
-const mapStateToProps = ({newsList: {news, loading, error}}) => {
+const mapStateToProps = ({newsList: {filteredNews, news, loading, error}}) => {
   return{
     news,
     loading,
-    error
+    error,
+    filteredNews
   }
 };
 
@@ -61,4 +72,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default compose(
   withService(),
   connect(mapStateToProps, mapDispatchToProps)
-)(NewsList);
+)(NewsListContainer);

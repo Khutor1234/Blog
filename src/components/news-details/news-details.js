@@ -39,9 +39,10 @@ const NewsDetails = ({itemId, comments, newsById, loading, error, fetchNewsById}
               return (
                 <ListItem key = {item.id}>
                   <ListItemAvatar>
-                      <Avatar className={classes.avatar} alt="Remy Sharp" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymjxHoVB2hlH41ioYDjkzOd7oVPhJu-uIeQ&usqp=CAU" />
+                      <Avatar className={classes.img} alt="Remy Sharp" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSymjxHoVB2hlH41ioYDjkzOd7oVPhJu-uIeQ&usqp=CAU" />           
                   </ListItemAvatar>
                   <ListItemText>
+                    <Typography className={classes.email} component="h3">{item.email}</Typography>
                     <Typography className={classes.name} component="h2">{item.name}</Typography>
                     <Typography className={classes.body} component="span">{item.body}</Typography>
                   </ListItemText>

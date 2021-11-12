@@ -12,10 +12,6 @@ const useStyles = makeStyles((theme) => ({
 		boxShadow: theme.shadows[5],
 		padding: theme.spacing(2, 4, 3),
 		},
-    button: {
-        width: 100,
-        margin: '10px 10px 0 0'
-    },
     title:{
         width: '100%'
     },
